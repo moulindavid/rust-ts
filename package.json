@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/moulindavid/rust-ts/issues"
   },
-  "homepage": "https://github.com/moulindavid/rust-ts#readme"
+  "homepage": "https://github.com/moulindavid/rust-ts#readme",
+  "devDependencies": {
+    "@types/node": "^18.15.13"
+  }
 }

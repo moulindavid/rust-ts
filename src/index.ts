@@ -1,4 +1,9 @@
-function practice( nums: number[], index: number): number {
+import fs from "fs";
 
-    return (nums[index] ?? index) * 5;
-}
+const fileName = process.argv[2];
+
+fs.readFileSync(fileName).
+    toString().
+    split("\n").
+    forEach(line => console.log(line));
+
