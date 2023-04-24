@@ -5,11 +5,7 @@ fn main() {
 
     let file = std::fs::read_to_string(file_name).expect("unable to the file to string");
 
-    file.lines().for_each(|line| {
-        if let Ok(value) = line.parse::<usize>() {
-            println!("{}", value);
-        } else {
-            println!("Line not a number");
-        }
-    });
+    file.lines()
+        .filter_map(|line| line.parse::<usize>().ok())
+        .for_each(|line| println!("{}", line));
 }
