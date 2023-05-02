@@ -1,10 +1,17 @@
 #[derive(Debug)]
-struct MyStruct {
-    age: usize,
+struct Item {
+    count: usize,
 }
 
+fn add_one(item: &mut Item) {
+    item.count += 1;
+}
 fn main() {
-    let item = MyStruct { age: 0 };
+    let mut item = Item { count: 0 };
 
-    let items: Vec<&MyStruct> = vec![&item];
+    println!("{:?}", item);
+
+    add_one(&mut item);
+
+    println!("{:?}", item);
 }
