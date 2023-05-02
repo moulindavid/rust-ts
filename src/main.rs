@@ -6,12 +6,21 @@ struct Item {
 fn add_one(item: &mut Item) {
     item.count += 1;
 }
+
+fn print_all(items: &mut Vec<Item>) {
+    for item in items {
+        println!("{:?}", item);
+    }
+}
+
 fn main() {
-    let mut item = Item { count: 0 };
+    let mut items = vec![Item { count: 1 }];
 
-    println!("{:?}", item);
+    let first = items.first_mut();
+    println!("{:?}", first);
 
-    add_one(&mut item);
-
-    println!("{:?}", item);
+    print_all(&mut items);
+    // If we do this we break borrow rules, there can only be one mutable reference and no
+    // immutuble references
+    //   println!("{:?}", first);
 }
